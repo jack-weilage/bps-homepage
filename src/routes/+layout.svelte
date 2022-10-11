@@ -9,8 +9,6 @@
 
     import Link from './Link.svelte'
     import NavItem from './NavItem.svelte'
-
-    const translate = (language: string) => alert(`Just changed language to ${language}!`)
 </script>
 
 <header>
@@ -18,10 +16,10 @@
     <a href="#content"  class="skip-to">Skip to Content</a>
     <div class="top-bar">
         <div class="welcomes">
-            <button title="Spanish"     on:click={() => translate('es')}>Bienvenido</button>
-            <button title="Punjabi"     on:click={() => translate('pa')}>ਸੁਆਗਤ ਹੈ</button>
-            <button title="Vietnamese"  on:click={() => translate('vi')}>Xin chào</button>
-            <button title="Russian"     on:click={() => translate('ru')}>добро пожаловать</button>
+            <a href="https://bellinghamschools.org/es/">Bienvenido</a>
+            <a href="https://bellinghamschools.org/pa/">ਸੁਆਗਤ ਹੈ</a>
+            <a href="https://bellinghamschools.org/vi/">Xin chào</a>
+            <a href="https://bellinghamschools.org/ru/">добро пожаловать</a>
         </div>
         <div class="right">
             <Link href="https://facebook.com/bellinghamschools" title="Facebook">
@@ -38,9 +36,9 @@
             </Link>
             <Link class="staff-login" href="https://inside.bellinghamschools.org/Pages/default.aspx">Staff Login</Link>
 
-            <form method="POST">
-                <label for="langs">Translate to:</label>
-                <select name="lang" id="langs" on:change={ev => translate(ev.currentTarget.value)}>
+            <form method="GET">
+                <label for="lang-selector">Translate to:</label>
+                <select name="lang" id="lang-selector">
                     <option value="en">English</option>
                     <option value="es">Espanol</option>
                 </select>
@@ -145,10 +143,11 @@
             }
         }
         > div.top-bar {
+            //TODO: Mobile layout.
             display: grid;
             grid-template-columns: 1fr 1fr;
 
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             background-color: $grey;
 
             padding: 0.6rem 2rem;
@@ -157,15 +156,11 @@
                 display: flex;
                 align-items: center;
 
-                > button {
+                > a {
                     color: $brand-red;
                     padding: 0 1em;
-                    background-color: inherit;
 
-                    cursor: pointer;
-
-                    border: 0;
-                    margin: 0;
+                    text-decoration: none;
 
                     &:hover {
                         color: #000;
@@ -212,16 +207,31 @@
             }
         }
         > div.branding {
+            //TODO: Mobile layout.
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-areas: "logo links";
+
+            @media screen and (max-width: 800px) {
+                grid-template-areas: 
+                    "logo ."
+                    "links links";
+            }
 
             padding: 1.25rem 2.75rem;
 
-            > a > img {
-                height: 7rem;
-            }
+            > a {
+                grid-area: logo;
+
+                > img {
+                    max-height: 7rem;
+                }
+            } 
             > div.links {
+                grid-area: links;
+                
                 display: flex;
+                flex-wrap: wrap;
+                gap: 1em;
                 align-items: center;
                 justify-content: space-between;
 
@@ -236,6 +246,7 @@
             }
         }
         > nav {
+            //TODO: Mobile layout.
             position: sticky;
             top: 0;
             

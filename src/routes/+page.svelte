@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Article      from './Article.svelte';
+    import Article      from './Article.svelte'
     import Carousel     from './Carousel.svelte'
     import CarouselItem from './CarouselItem.svelte'
     import Link         from './Link.svelte'
@@ -45,7 +45,7 @@
             <a href="https://bellinghamschools.org/news">View all News »</a>
         </div>
     </section>
-    <section id="the-bellingham-promise">
+    <section id="the-bellingham-promise" class="sect">
         <h2>The Bellingham Promise</h2>
         <div class="col-3">
             <div class="col">
@@ -73,11 +73,11 @@
         </div>
         <a href="https://bellinghamschools.org/about/the-bellingham-promise/" class="read-more">Read The Bellingham Promise »</a>
     </section>
-    <section id="promise-stories">
+    <section id="promise-stories" class="sect">
         <h2>Promise Stories</h2>
         <div class="col-3">
             <div class="col">
-                <img src="/images/promise-stories/ik596jns.bmp" alt="" loading="lazy">
+                <img src="/images/promise-stories/1.bmp" alt="" loading="lazy">
                 <time datetime="">10/10/2022</time>
                 <h3>
                     <a href="https://promise.bellinghamschools.org/2022/10/10/students-get-hands-on-experience-for-high-demand-jobs-in-new-cte-courses/">
@@ -90,7 +90,7 @@
                 </a>
             </div>
             <div class="col">
-                <img src="/images/promise-stories/9rvl7udr.bmp" alt="" loading="lazy">
+                <img src="/images/promise-stories/2.bmp" alt="" loading="lazy">
                 <time datetime="">10/5/2022</time>
                 <h3>
                     <a href="https://promise.bellinghamschools.org/2022/10/05/the-new-sunnyland-designed-for-flexible-learning-environments/">
@@ -103,7 +103,7 @@
                 </a>
             </div>
             <div class="col">
-                <img src="/images/promise-stories/i3hiu941.bmp" alt="" loading="lazy">
+                <img src="/images/promise-stories/3.bmp" alt="" loading="lazy">
                 <time datetime="">09/22/2022</time>
                 <h3>
                     <a href="https://promise.bellinghamschools.org/2022/09/22/teacher-katie-owen-goes-to-world-track-meet/">
@@ -117,92 +117,182 @@
             </div>
         </div>
     </section>
-    <section id="pillars">
+    <section id="pillars" class="sect">
         <div class="col-3">
-            <div class="col">
-                <a href="https://bellinghamschools.org/about/superintendent/project-free-education/">
-                    <img src="/images/pillars/swg58b5a.bmp" alt="" loading="lazy">
-                </a>
+            <a href="https://bellinghamschools.org/about/superintendent/project-free-education/" class="col">
+                <img src="/images/pillars/1.bmp" alt="" loading="lazy">
+                <span>
+                    Project Free Education
+                    <img src="/images/sketched-line.png" alt="">
+                </span>
+            </a>
+            <a href="https://bellinghamschools.org/about/equity-diversity-and-inclusion/" class="col">
+                <img src="/images/pillars/2.bmp" alt="" loading="lazy">
+                <span>
+                    Equity, Diversity and Inclusion
+                    <img src="/images/sketched-line.png" alt="">
+                </span>
+            </a>
+            <a href="http://www.bellinghamschoolsfoundation.org/" class="col">
+                <img src="/images/pillars/3.bmp" alt="" loading="lazy">
+                <span>
+                    Bellingham Schools Foundation
+                    <img src="/images/sketched-line.png" alt="">
+                </span>
+            </a>
+        </div>
+    </section>
+    <section id="video" class="sect">
+        <h2>Featured Video</h2>
+        <div class="content">
+            <div>
+                <h3>2022 Bellingham Promise Awards</h3>
+                <a href="https://bellinghamps.wistia.com/projects/hsw4p9nyuv">View All Videos »</a>
             </div>
-            <div class="col">
-                <a href="https://bellinghamschools.org/about/equity-diversity-and-inclusion/">
-                    <img src="/images/pillars/jx8mk2cq.bmp" alt="" loading="lazy">
-                </a>
-            </div>
-            <div class="col">
-                <a href="http://www.bellinghamschoolsfoundation.org/">
-                    <img src="/images/pillars/ukogohdq.bmp" alt="" loading="lazy">
-                </a>
-            </div>
+            <img src="/images/video-preview/thumb.bmp" alt="">
         </div>
     </section>
 </main>
 
 <style lang="scss">
-    main {
-        section#news {
-            padding: 0;
+    #news {
+        display: grid;
+        grid-template-columns: [carousel] 3fr [news] 2fr;
 
-            display: grid;
-            grid-template-columns: [carousel] 3fr [news] 2fr;
-            grid-template-rows: 1fr;
-
-            div.news-aside {
-                grid-column: news;
-                padding: 1.75rem 2rem;
-                
-                h2 {
-                    margin: 0;
-
-                    text-align: start;
-                    line-height: 1;
-                }
-                div.articles {
-                    margin: 1.25rem 0;
-                }
-                a {
-                    font-weight: bold;
-
-                    color: $brand-red;
-
-                    &:hover {
-                        color: #383838;
-                    }
-                }
-            }
+        @media screen and (max-width: 800px) {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
         }
-        section#pillars {
-            grid-template-rows: [header] 6rem [main] 1fr [footer] 6rem;
-         
-            div.col-3 {
-                grid-row: main
-            }
+
+        .news-aside {
+            padding: 1.75rem 2rem;  
         }
-        section {
-            display: grid;
-            grid-template-rows: [header] 10rem [main] 1fr [footer] 10rem;
-            align-items: center;
+        h2 {
+            color: $brand-light-blue;
 
-            padding: 0 2rem;
+            font-weight: 300;
+            font-size: 2.5em;
+            margin: 0;
 
-            &:nth-child(odd) {
-                background-color: $light-grey;
-            }
-            h2 {
-                color: $brand-light-blue;
-                text-align: center;
+            line-height: 1;
+        }
+        .articles {
+            margin: 1.25rem 0;;
+        }
+        a {
+            font-weight: bold;
+            color: $brand-red;
 
-                font-weight: 300;
-                font-size: 2.5em;
-
-                margin: 0;
+            &:hover {
+                color: #383838;
             }
         }
     }
+    #promise-stories {
+        grid-template-rows: [header] 8rem [main] 1fr [footer] 4rem;
+
+        time {
+            display: block;
+            margin: 1.2rem 0;
+        }
+        h3 {
+            margin: 0;
+
+            a {
+                color: #052f5a;
+                text-decoration: none;
+                
+                &:hover {
+                    color: #0b1117;
+                    text-decoration: underline;
+                }
+            }
+        }
+        div.col > a {
+            font-weight: bold;
+            color: $brand-red;
+        }
+    }
+    #pillars {
+        grid-template-rows: [header] 6rem [main] 1fr [footer] 6rem;
+        
+        .col-3 {
+            grid-row: main;
+
+            .col {
+                display: grid;
+                grid-template-areas: "stack";
+                align-items: center;
+
+                text-decoration: none;
+
+                img {
+                    grid-area: stack;
+                }
+                span {
+                    padding: 1rem;
+
+                    color: #fff;
+                    font-size: 2.6em;
+                    font-weight: 300;
+                    grid-area: stack;
+
+                    line-height: 1.2;
+                }
+            }
+        }
+    }
+    #video .content {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+
+        h3 {
+            margin-top: 0;
+            color: $brand-blue;
+        }
+        a {
+            color: $brand-red;
+
+            &:hover {
+                color: #0b1117;
+            }
+        }
+    }
+
+    section:nth-child(odd) {
+        background-color: $light-grey;
+    }
+    .sect {
+        display: grid;
+        grid-template-rows: [header] 10rem [main] 1fr [footer] 10rem;
+        align-items: center;
+
+        padding: 0 2rem;
+
+        h2 {
+            color: $brand-light-blue;
+            text-align: center;
+
+            font-weight: 300;
+            font-size: 2.5em;
+
+            margin: 0;
+        }
+    }
+    
     .col-3 {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 2rem;
+
+        align-items: normal;
+
+        @media screen and (max-width: 800px) {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+
+            align-items: center;
+        }
 
         .col {
             text-align: center;

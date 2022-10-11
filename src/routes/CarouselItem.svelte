@@ -30,7 +30,6 @@
         figcaption {
             grid-area: stack;
             padding: 1rem;
-
             
             background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
 
