@@ -1,0 +1,18 @@
+//WARN: Be very careful about what's placed in here! These rules will apply to _every_ page and element!
+:global {
+    html, body {
+        padding: 0;
+        margin: 0;
+
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+    *:focus {
+        outline: 2px solid yellow;
+    }
+    img {
+        max-width: 100%;
+    }
+}
