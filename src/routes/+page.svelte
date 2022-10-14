@@ -11,6 +11,7 @@
 
 <svelte:head>
     <title>Bellingham Public Schools</title>
+    <meta name="description" content="Welcome to Bellingham Public Schools">
 </svelte:head>
 
 <main id="content">
