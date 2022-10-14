@@ -37,7 +37,7 @@
 </script>
 
 <div class="wrapper">
-    <button type="button" 
+    <button type="button" aria-label="Last image"
         on:click={() => navigate(index - 1)}
     >&lt;</button>
 
@@ -46,14 +46,14 @@
     </div>
     <div class="buttons">
         {#each { length: images?.childElementCount } as _, i}
-            <button type="button" class:active={index === i} 
+            <button type="button" class:active={index === i} aria-label="Jump to image {i + 1}"
                 bind:this={buttons[i]}
                 on:click={() => navigate(i)}
             ></button>
         {/each}
     </div>
     
-    <button type="button" 
+    <button type="button" aria-label="Next image"
         on:click={() => navigate(index + 1)}
     >&gt;</button>
 </div>

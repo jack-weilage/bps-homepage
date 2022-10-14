@@ -52,7 +52,7 @@
     <div class="branding">
         <!-- TODO: Use an inlined SVG icon. -->
         <a href="https://bellinghamschools.org" class="logo">
-            <img src="/images/logo.bmp" alt="">
+            <img src="/images/logo.bmp" alt="Bellingham Public Schools Logo">
         </a>
         <!-- TODO: Mobile. -->
         <div class="links">
