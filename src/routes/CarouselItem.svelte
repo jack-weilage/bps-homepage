@@ -1,7 +1,3 @@
-<script lang="ts">
-
-</script>
-
 <figure>
     <slot name="image">
         <!-- <img loading="lazy" src="https://picsum.photos/seed/img/1280/720" alt=""> -->

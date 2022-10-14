@@ -15,27 +15,30 @@
     <a href="#nav"      class="skip-to">Skip to Navigation</a>
     <a href="#content"  class="skip-to">Skip to Content</a>
     <div class="top-bar">
+        <!-- TODO: Mobile. -->
         <div class="welcomes">
             <a href="https://bellinghamschools.org/es/">Bienvenido</a>
             <a href="https://bellinghamschools.org/pa/">ਸੁਆਗਤ ਹੈ</a>
             <a href="https://bellinghamschools.org/vi/">Xin chào</a>
             <a href="https://bellinghamschools.org/ru/">добро пожаловать</a>
         </div>
+        <!-- TODO: Make icons a square on mobile. -->
         <div class="right">
             <Link href="https://facebook.com/bellinghamschools" title="Facebook">
-                <LogoFacebook />
+                <LogoFacebook aria-hidden="true" />
             </Link>
             <Link href="https://twitter.com/BhamSD" title="Twitter">
-                <LogoTwitter />
+                <LogoTwitter aria-hidden="true" />
             </Link>
             <Link href="https://www.flickr.com/photos/bellinghamschools" title="Flickr">
-                <LogoFlickr />
+                <LogoFlickr aria-hidden="true" />
             </Link>
             <Link href="https://instagram.com/bellinghamschools/" title="Instagram">
-                <LogoInstagram />
+                <LogoInstagram aria-hidden="true" />
             </Link>
             <Link class="staff-login" href="https://inside.bellinghamschools.org/Pages/default.aspx">Staff Login</Link>
 
+            <!-- TODO: Add a functional translation system. -->
             <form method="GET">
                 <label for="lang-selector">Translate to:</label>
                 <select name="lang" id="lang-selector">
@@ -47,9 +50,11 @@
         </div>
     </div>
     <div class="branding">
+        <!-- TODO: Use an inlined SVG icon. -->
         <a href="https://bellinghamschools.org" class="logo">
             <img src="/images/logo.bmp" alt="">
         </a>
+        <!-- TODO: Mobile. -->
         <div class="links">
             <Link href="https://www.parentsquare.com/signin">ParentSquare</Link>
             <Link href="https://www2.nwrdc.wa-k12.net/scripts/cgiip.exe/WService=wbellins71/seplog01.w">Skyward</Link>
@@ -60,6 +65,7 @@
             <Link href="https://bellinghamschools.org/contact/">Contact</Link>
         </div>
     </div>
+    <!-- TODO: Mobile. -->
     <nav id="nav">
         <ul>
             <NavItem href="https://bellinghamschools.org/about/" title="About">
@@ -92,9 +98,10 @@
                     contents school board
                 </svelte:fragment>
             </NavItem>
+            <!-- TODO: Add psuedo-search. -->
             <li class="nav-item">
                 <a href="/">
-                    <IconSearch />
+                    <IconSearch aria-hidden="true" />
                     Search
                 </a>
             </li>
@@ -105,8 +112,9 @@
 <slot />
 
 <footer>
+    <!-- TODO: Progressively enhance with JS. -->
     <a href="#content" title="Scroll to top">
-        <ArrowUp />
+        <ArrowUp aria-hidden="true" />
     </a>
     <div class="cta">
         <h3>Community members, sign up for district e-news.</h3>

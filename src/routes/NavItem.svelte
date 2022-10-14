@@ -10,7 +10,7 @@
 <li>
     <a {href} class:active={$page.url.pathname === href}>
         {title}
-        <ChevronDown />
+        <ChevronDown aria-hidden="true" />
     </a>
     <div>
         <div class="description">

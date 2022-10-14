@@ -5,11 +5,14 @@
     import Link         from './Link.svelte'
 
     import { DateTime } from 'luxon'
+
+    //TODO: Optimize images.
 </script>
 
 <svelte:head>
     <title>Bellingham Public Schools</title>
 </svelte:head>
+
 <main id="content">
     <section id="news">
         <Carousel>
@@ -20,6 +23,10 @@
             <CarouselItem>
                 <img slot="image" src="/images/carousel/2.bmp" loading="lazy" alt="">
                 <Link slot="caption" href="https://bellinghamschools.org/parentsquare/">Read More »</Link>
+            </CarouselItem>
+            <CarouselItem>
+                <img slot="image" src="/images/carousel/3.bmp" loading="lazy" alt="">
+                <Link slot="caption" href="https://bellinghamschools.org/families/school-day-information/bus-transportation/">Read More »</Link>
             </CarouselItem>
             <CarouselItem>
                 <img slot="image" src="/images/carousel/3.bmp" loading="lazy" alt="">
